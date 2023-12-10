@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build app') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Tejas-Pulli/Dockerize.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Rishi855/New-dockteriz.git']])
             }
         }
         stage('Build docker image'){
@@ -17,7 +17,7 @@ pipeline {
         stage('Change image tag'){
             steps{
                 script{
-                    bat 'docker tag jenkinsjavaapp tejas1502/jenkinsjava_app:v1.0'
+                    bat 'docker tag jenkinsjavaapp rushikesh855/poedevops:v1.0'
                 }
             }
         }
@@ -25,10 +25,10 @@ pipeline {
             steps{
                 script{
                     withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]) {
-                        bat 'docker login -u pullitejas3@gmail.com -p Tj@152002'
+                        bat 'docker login -u rushikeshs855@gmail.com -p Swami@3295'
 
                     }
-                    bat 'docker push tejas1502/jenkinsjava_app:v1.0'
+                    bat 'docker push rushikesh855/poedevops:v1.0'
                 }
             }
         }
