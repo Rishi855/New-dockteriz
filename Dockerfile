@@ -1,5 +1,5 @@
 FROM openjdk
-EXPOSE 8080
+EXPOSE 9090
 WORKDIR /app
 COPY . /app
 RUN javac Hello.java
